@@ -1,0 +1,19 @@
+baseURL = "https://example.com"
+languageCode = "ja"
+title = "Hugo-Primer Themed Template"
+theme = "hugo-primer"
+hasCJKLanguage = true
+summaryLength = 70
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+googleAnalytics = "UA-00000000-0"
+disqusShortname=""
+copyright = "&copy; Your Name"
+
+[params]
+description = "A blog template using hugo-primer theme"
+twitter = ""
+useIcon = true
+useTwitterCard = true
+shareTo = ["Twitter", "Facebook"]
+showFooterCredits = true
