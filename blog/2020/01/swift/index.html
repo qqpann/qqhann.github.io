@@ -1,0 +1,712 @@
+<!doctype html><html><head><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-87782758-5','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Swift Cheat sheet (1-15/100) &ndash; qqhann</title><meta name=description property="og:description" content="100DaysOfSwiftUIの振り返り用Cheat sheetです．Day1-Day15のまとめです． Day1 var 変数を宣言 let 定数を宣言（後から変|Qiushi(a.k.a. qqhann)'s web site. Find my information, my blog on technologies and personal hobbies here."><meta name=apple-mobile-web-app-title content="qqhann"><link rel=icon href=/favicon-64.png><link rel=apple-touch-icon href=/apple-touch-icon.png><link rel=mask-icon size=any href=/pinned-icon.svg><meta name=twitter:card content="summary"><meta name=twitter:site content="@qqhann"><meta name=twitter:creator content="@qqhann"><meta name=twitter:title content="Swift Cheat sheet (1-15/100) | qqhann"><meta name=twitter:description content="100DaysOfSwiftUIの振り返り用Cheat sheetです．Day1-Day15のまとめです． Day1 var 変数を宣言 let 定数を宣言（後から変|Qiushi(a.k.a. qqhann)'s web site. Find my information, my blog on technologies and personal hobbies here."><meta name=twitter:image content="https://qqhann.devtwitter-card.png"><link rel=stylesheet href=/assets/syntax.css><link rel=stylesheet href=/assets/primer-build.css><link rel=stylesheet href=/assets/style.css><link rel=stylesheet href=/assets/custom_style.css></head><body class=bg-gray><div id=holy class="container-lg bg-white h-100"><div id=header class="px-1 bg-white"><nav class="UnderlineNav UnderlineNav--right px-2"><a class="UnderlineNav-actions muted-link h2" href=https://qqhann.dev>qqhann</a><div class=UnderlineNav-body><a class=UnderlineNav-item href=/><span>Info</span></a>
+<a class=UnderlineNav-item href=/projects/><span>Projects</span></a>
+<a class=UnderlineNav-item href=/blog/><span>Blog</span></a></div></nav></div><div role=main id=main class="holy-main markdown-body px-4 bg-white"><div class=Subhead><div class=Subhead-heading><div class="h1 mt-3 mb-1">Swift Cheat sheet (1-15/100)</div></div><div class=Subhead-description><a href=/tags/swift class=muted-link><span class="Label Label--gray">Swift</span></a>
+<a href=/tags/ios class=muted-link><span class="Label Label--gray">iOS</span></a><div class=float-md-right><span title="Lastmod: 2020-01-14. Published at: 2020-01-14.">Published: 2020-01-14</span></div></div></div><article><section class="pb-6 mb-3 border-bottom"><p><a href=https://www.hackingwithswift.com/100/swiftui>100DaysOfSwiftUI</a>の振り返り用Cheat sheetです．Day1-Day15のまとめです．</p><h2 id=day1>Day1</h2><p><code>var</code> 変数を宣言
+<code>let</code> 定数を宣言（後から変更不可）（constatns）
+<code>"Apple costs \(apple)"</code> String Interpolation　文字列の中に埋め込む</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>album</span><span class=p>:</span> <span class=nb>String</span> <span class=p>=</span> <span class=s>&#34;Reputation&#34;</span>
+<span class=kd>let</span> <span class=nv>year</span><span class=p>:</span> <span class=nb>Int</span> <span class=p>=</span> <span class=mi>1989</span>
+<span class=kd>let</span> <span class=nv>height</span><span class=p>:</span> <span class=nb>Double</span> <span class=p>=</span> <span class=mf>1.78</span>
+<span class=kd>let</span> <span class=nv>taylorRocks</span><span class=p>:</span> <span class=nb>Bool</span> <span class=p>=</span> <span class=kc>true</span>
+</code></pre></div><p>型の指定。特別に指定しなくても初期化の時に自動判断されるが、特に指定する場合の文法は上記の通り。</p><p>また，変数の型を変更することはできない（type safe）．</p><h2 id=day2>Day2</h2><h3 id=collections>collections</h3><h4 id=array>Array</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>beatles</span> <span class=p>=</span> <span class=p>[</span><span class=s>&#34;John&#34;</span><span class=p>,</span> <span class=s>&#34;Paul&#34;</span><span class=p>,</span> <span class=s>&#34;George&#34;</span><span class=p>,</span> <span class=s>&#34;Ringo&#34;</span><span class=p>]</span>
+<span class=n>beatles</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span>
+</code></pre></div><h4 id=sets>Sets</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>colors2</span> <span class=p>=</span> <span class=n>Set</span><span class=p>([</span><span class=s>&#34;red&#34;</span><span class=p>,</span> <span class=s>&#34;green&#34;</span><span class=p>,</span> <span class=s>&#34;blue&#34;</span><span class=p>,</span> <span class=s>&#34;red&#34;</span><span class=p>,</span> <span class=s>&#34;blue&#34;</span><span class=p>])</span>
+</code></pre></div><h4 id=dictionaries>Dictionaries</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>heights</span> <span class=p>=</span> <span class=p>[</span>
+    <span class=s>&#34;Taylor Swift&#34;</span><span class=p>:</span> <span class=mf>1.78</span><span class=p>,</span>
+    <span class=s>&#34;Ed Sheeran&#34;</span><span class=p>:</span> <span class=mf>1.73</span>
+<span class=p>]</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=n>favoriteIceCream</span><span class=p>[</span><span class=s>&#34;Charlotte&#34;</span><span class=p>,</span> <span class=k>default</span><span class=p>:</span> <span class=s>&#34;Unknown&#34;</span><span class=p>]</span>
+</code></pre></div><p>存在しないキーを読んだら<code>nil</code>が帰るが、デフォルトを指定すればデフォルトが帰る。</p><h4 id=tuple>Tuple</h4><p>Tupleはどうやらそもそも型ではなさそう．collectionでもない．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>var</span> <span class=nv>name</span> <span class=p>=</span> <span class=p>(</span><span class=bp>first</span><span class=p>:</span> <span class=s>&#34;Taylor&#34;</span><span class=p>,</span> <span class=bp>last</span><span class=p>:</span> <span class=s>&#34;Swift&#34;</span><span class=p>)</span>
+</code></pre></div><p>tupleの使い方。あたいは変更できるが、型は変更できない。
+<code>name.0</code>または<code>name.first</code>のように、ポジションまたは名前でアクセスできる。</p><h4 id=collections-init-and-type-annotation>collections init and type annotation</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=c1>// Array</span>
+<span class=kd>var</span> <span class=nv>results</span> <span class=p>=</span> <span class=p>[</span><span class=nb>Int</span><span class=p>]()</span>
+<span class=kd>var</span> <span class=nv>results</span> <span class=p>=</span> <span class=nb>Array</span><span class=p>&lt;</span><span class=nb>Int</span><span class=p>&gt;()</span>
+
+<span class=c1>// Dictionary</span>
+<span class=kd>var</span> <span class=nv>teams</span> <span class=p>=</span> <span class=p>[</span><span class=nb>String</span><span class=p>:</span> <span class=nb>String</span><span class=p>]()</span>
+<span class=kd>var</span> <span class=nv>scores</span> <span class=p>=</span> <span class=nb>Dictionary</span><span class=p>&lt;</span><span class=nb>String</span><span class=p>,</span> <span class=nb>Int</span><span class=p>&gt;()</span>
+
+<span class=c1>// Set</span>
+<span class=kd>var</span> <span class=nv>numbers</span> <span class=p>=</span> <span class=n>Set</span><span class=p>&lt;</span><span class=nb>Int</span><span class=p>&gt;()</span>
+</code></pre></div><p>ArrayとDictionaryにだけ，特別な記法がある．<code>Set&lt;Int>()</code>のような記法の方がデフォルト．</p><h3 id=enum>enum</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>enum</span> <span class=nc>Result</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=n>success</span>
+    <span class=k>case</span> <span class=n>failure</span>
+<span class=p>}</span>
+</code></pre></div><p>enumでは型を定義できる。この例ではResult型を定義し、successまたはfalureのみを選択できる</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>result4</span> <span class=p>=</span> <span class=n>Result</span><span class=p>.</span><span class=n>failure</span>
+</code></pre></div><p>caseにさらなる情報を付加できる</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>enum</span> <span class=nc>Activity</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=n>bored</span>
+    <span class=k>case</span> <span class=n>running</span><span class=p>(</span><span class=n>destination</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span>
+    <span class=k>case</span> <span class=n>talking</span><span class=p>(</span><span class=n>topic</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span>
+    <span class=k>case</span> <span class=n>singing</span><span class=p>(</span><span class=n>volume</span><span class=p>:</span> <span class=nb>Int</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><p>使い方は</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>talking</span> <span class=p>=</span> <span class=n>Activity</span><span class=p>.</span><span class=n>talking</span><span class=p>(</span><span class=n>topic</span><span class=p>:</span> <span class=s>&#34;football&#34;</span><span class=p>)</span>
+</code></pre></div><p>この付加情報は定義されている場合，初期化時に具体値を与えなければならない．</p><h4 id=enumのindex指定>enumのIndex指定</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>enum</span> <span class=nc>Planet</span><span class=p>:</span> <span class=nb>Int</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=n>mercury</span>
+    <span class=k>case</span> <span class=n>venus</span>
+    <span class=k>case</span> <span class=n>earth</span>
+    <span class=k>case</span> <span class=n>mars</span>
+<span class=p>}</span>
+</code></pre></div><p>とすることで、caseにIntで0から自動で割り振られるので、earthは2が割り振られる。</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>earth</span> <span class=p>=</span> <span class=n>Planet</span><span class=p>(</span><span class=n>rawValue</span><span class=p>:</span> <span class=mi>2</span><span class=p>)</span>
+</code></pre></div><p>のように使うことができる．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>enum</span> <span class=nc>Planet</span><span class=p>:</span> <span class=nb>Int</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=n>mercury</span> <span class=p>=</span> <span class=mi>1</span>
+    <span class=k>case</span> <span class=n>venus</span>
+    <span class=k>case</span> <span class=n>earth</span>
+    <span class=k>case</span> <span class=n>mars</span>
+<span class=p>}</span>
+</code></pre></div><p>このように個別に指定することができる。その後は自動でインクリメンタルするので、earthは3が割り振られる。</p><h2 id=day3>Day3</h2><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=mi>12</span> <span class=o>+</span> <span class=mi>4</span>
+<span class=mi>12</span> <span class=o>-</span> <span class=mi>4</span>
+<span class=mi>12</span> <span class=o>*</span> <span class=mi>4</span>
+<span class=mi>12</span> <span class=o>/</span> <span class=mi>4</span>
+<span class=mi>12</span> <span class=o>/</span> <span class=mi>5</span>  <span class=c1>// 2</span>
+<span class=mf>12.0</span> <span class=o>/</span> <span class=mi>5</span>  <span class=c1>// 2.4</span>
+<span class=mi>12</span> <span class=o>/</span> <span class=mf>5.0</span>  <span class=c1>// 2.4</span>
+<span class=mi>12</span> <span class=o>%</span> <span class=mi>5</span>
+
+<span class=s>&#34;Hello &#34;</span> <span class=o>+</span> <span class=s>&#34;World&#34;</span>
+<span class=p>[</span><span class=s>&#34;John&#34;</span><span class=p>,</span> <span class=s>&#34;Paul&#34;</span><span class=p>]</span> <span class=o>+</span> <span class=p>[</span><span class=s>&#34;George&#34;</span><span class=p>,</span> <span class=s>&#34;Ringo&#34;</span><span class=p>]</span>  <span class=c1>// [&#34;John&#34;, &#34;Paul&#34;, &#34;George&#34;, &#34;Ringo&#34;]</span>
+
+<span class=c1>// compound assignment operators</span>
+<span class=kd>var</span> <span class=nv>count</span> <span class=p>=</span> <span class=mi>0</span>
+<span class=bp>count</span> <span class=o>+=</span> <span class=mi>1</span>
+
+<span class=c1>// comparison operators</span>
+<span class=mi>6</span> <span class=p>==</span> <span class=mi>4</span>
+<span class=mi>6</span> <span class=o>!=</span> <span class=mi>4</span>
+<span class=mi>6</span> <span class=o>&lt;</span> <span class=mi>4</span>
+<span class=mi>6</span> <span class=o>&gt;=</span> <span class=mi>4</span>
+<span class=s>&#34;abc&#34;</span> <span class=o>&lt;</span> <span class=s>&#34;bbc&#34;</span>  <span class=c1>// true</span>
+</code></pre></div><h3 id=conditions>conditions</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>var</span> <span class=nv>sex</span> <span class=p>=</span> <span class=s>&#34;man&#34;</span>
+<span class=k>if</span> <span class=n>sex</span> <span class=p>==</span> <span class=s>&#34;man&#34;</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello, Mr.&#34;</span><span class=p>)</span>
+<span class=p>}</span> <span class=k>else</span> <span class=k>if</span> <span class=n>sex</span> <span class=p>==</span> <span class=s>&#34;woman&#34;</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello, Ms.&#34;</span><span class=p>)</span>
+<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello, sir&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=kd>var</span> <span class=nv>age</span> <span class=p>=</span> <span class=mi>19</span>
+<span class=k>if</span> <span class=n>age</span> <span class=o>&gt;=</span> <span class=mi>18</span> <span class=o>&amp;&amp;</span> <span class=n>age</span> <span class=o>&lt;</span> <span class=mi>20</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;You can drive but not drink&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=c1>// And</span>
+<span class=kc>true</span> <span class=o>&amp;&amp;</span> <span class=kc>false</span>
+<span class=c1>// Or</span>
+<span class=kc>true</span> <span class=o>||</span> <span class=kc>false</span>
+</code></pre></div><h4 id=三項演算子>三項演算子</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=c1>// the tenary operator</span>
+<span class=kd>var</span> <span class=nv>sex2</span> <span class=p>=</span> <span class=s>&#34;woman&#34;</span>
+<span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello &#34;</span> <span class=o>+</span> <span class=p>(</span><span class=n>sex2</span> <span class=p>==</span> <span class=s>&#34;man&#34;</span> <span class=p>?</span> <span class=s>&#34;boy&#34;</span> <span class=p>:</span> <span class=s>&#34;girl&#34;</span><span class=p>))</span>
+</code></pre></div><h3 id=switch文>switch文</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=c1>// switch statements</span>
+<span class=kd>let</span> <span class=nv>weather</span> <span class=p>=</span> <span class=s>&#34;sunny&#34;</span>
+<span class=k>switch</span> <span class=n>weather</span> <span class=p>{</span>
+<span class=k>case</span> <span class=s>&#34;rain&#34;</span><span class=p>:</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Bring an umbrella&#34;</span><span class=p>)</span>
+<span class=k>case</span> <span class=s>&#34;sunny&#34;</span><span class=p>:</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Wear sunglass&#34;</span><span class=p>)</span>
+    <span class=k>fallthrough</span>
+<span class=k>case</span> <span class=s>&#34;snow&#34;</span><span class=p>:</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Wrap up warn&#34;</span><span class=p>)</span>
+<span class=k>default</span><span class=p>:</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Enjoy your day!&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=c1>// &#34;Wear sunglass\n&#34;</span>
+<span class=c1>// &#34;Wrap up warn\n&#34;</span>
+<span class=c1>// ↑snowの中身がfallthroughにより実行された．</span>
+</code></pre></div><p>fallthroughは次のcaseまたはdefaultを実行するみたい．使い道限られそう．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=c1>// range operators</span>
+<span class=kd>let</span> <span class=nv>score</span> <span class=p>=</span> <span class=mi>84</span>
+<span class=k>switch</span> <span class=n>score</span> <span class=p>{</span>
+<span class=k>case</span> <span class=p>..&lt;</span><span class=mi>0</span><span class=p>:</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Error&#34;</span><span class=p>)</span>
+<span class=k>case</span> <span class=mf>0.</span><span class=p>.&lt;</span><span class=mi>50</span><span class=p>:</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Failed&#34;</span><span class=p>)</span>
+<span class=k>case</span> <span class=mf>50.</span><span class=p>..</span><span class=mi>84</span><span class=p>:</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Pass&#34;</span><span class=p>)</span>
+<span class=k>default</span><span class=p>:</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Great!&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><p>range operatorは<code>a..&lt;b</code>：aからbまででbを含まない；<code>a...b</code>：bを含む；の2種類．</p><h2 id=day4>Day4</h2><h3 id=loop>Loop</h3><h4 id=for-loop>for loop</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=k>for</span> <span class=n>i</span> <span class=k>in</span> <span class=mf>1.</span><span class=p>..</span><span class=mi>10</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=k>for</span> <span class=n>album</span> <span class=k>in</span> <span class=p>[</span><span class=s>&#34;Red&#34;</span><span class=p>,</span> <span class=s>&#34;1989&#34;</span><span class=p>,</span> <span class=s>&#34;Reputation&#34;</span><span class=p>]</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>album</span><span class=si>)</span><span class=s> is on Apple Music&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=k>for</span> <span class=kc>_</span> <span class=k>in</span> <span class=mf>1.</span><span class=p>.&lt;</span><span class=mi>4</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Yes&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><p>参照が必要なければ<code>_</code>を指定することで，Swiftは評価をスキップしてくれる？</p><h4 id=while-loop>while loop</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>var</span> <span class=nv>number</span> <span class=p>=</span> <span class=mi>1</span>
+<span class=k>while</span> <span class=n>number</span> <span class=o>&lt;</span> <span class=mi>100</span> <span class=p>{</span>
+    <span class=k>if</span> <span class=n>number</span> <span class=p>==</span> <span class=mi>40</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;I cannot wait. I&#39;m coming!&#34;</span><span class=p>)</span>
+        <span class=k>break</span>
+    <span class=p>}</span>
+    <span class=bp>print</span><span class=p>(</span><span class=n>number</span><span class=p>)</span>
+    <span class=n>number</span> <span class=o>+=</span> <span class=mi>1</span>
+<span class=p>}</span>
+<span class=bp>print</span><span class=p>(</span><span class=s>&#34;Here I come!&#34;</span><span class=p>)</span>
+</code></pre></div><h4 id=repeat-loop>repeat loop</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=k>repeat</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=n>number</span><span class=p>)</span>
+    <span class=n>number</span> <span class=o>+=</span> <span class=mi>1</span>
+<span class=p>}</span> <span class=k>while</span> <span class=n>number</span> <span class=o>&lt;</span> <span class=mi>40</span>
+</code></pre></div><h4 id=name-loop-to-exit>name loop to exit</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=n>outerLoop</span><span class=p>:</span> <span class=k>for</span> <span class=n>i</span> <span class=k>in</span> <span class=mf>1.</span><span class=p>..</span><span class=mi>10</span> <span class=p>{</span>
+    <span class=n>innerLoop</span><span class=p>:</span> <span class=k>for</span> <span class=n>j</span> <span class=k>in</span> <span class=mf>1.</span><span class=p>..</span><span class=mi>10</span> <span class=p>{</span>
+        <span class=k>if</span> <span class=n>i</span><span class=o>*</span><span class=n>j</span> <span class=o>%</span> <span class=mi>3</span> <span class=p>==</span> <span class=mi>0</span> <span class=p>{</span>
+            <span class=k>break</span> <span class=n>innerLoop</span>
+        <span class=p>}</span>
+        
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>i</span><span class=o>*</span><span class=n>j</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+        
+        <span class=k>if</span> <span class=n>i</span><span class=o>*</span><span class=n>j</span> <span class=p>==</span> <span class=mi>20</span> <span class=p>{</span>
+            <span class=k>break</span> <span class=n>outerLoop</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><h4 id=continue>continue</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=k>for</span> <span class=n>i</span> <span class=k>in</span> <span class=mf>1.</span><span class=p>..</span><span class=mi>10</span> <span class=p>{</span>
+    <span class=k>if</span> <span class=n>i</span> <span class=o>%</span> <span class=mi>2</span> <span class=p>==</span> <span class=mi>0</span> <span class=p>{</span>
+        <span class=k>continue</span>
+    <span class=p>}</span>
+    <span class=bp>print</span><span class=p>(</span><span class=n>i</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><h2 id=day5>Day5</h2><h3 id=funcitons>funcitons</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>printHW</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello world!&#34;</span><span class=p>)</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Welcome </span><span class=si>\(</span><span class=n>name</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>printHW</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Qiushi&#34;</span><span class=p>)</span>
+
+<span class=kd>func</span> <span class=nf>square</span><span class=p>(</span><span class=n>number</span><span class=p>:</span> <span class=nb>Int</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>Int</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=n>number</span> <span class=o>*</span> <span class=n>number</span>
+<span class=p>}</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>square</span><span class=p>(</span><span class=n>number</span><span class=p>:</span> <span class=mi>8</span><span class=p>))</span>
+</code></pre></div><h4 id=parameter-labels>parameter labels</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>sayHello</span><span class=p>(</span><span class=n>to</span> <span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello </span><span class=si>\(</span><span class=n>name</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>sayHello</span><span class=p>(</span><span class=n>to</span><span class=p>:</span> <span class=s>&#34;Qiushi&#34;</span><span class=p>)</span>
+</code></pre></div><p>パラメーターラベルは複数定義できる．可読性のためにここまでするのはたまげる．</p><h4 id=omitting-parameter-labels-default-parameters>omitting parameter labels; default parameters</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>greet</span><span class=p>(</span><span class=kc>_</span> <span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello </span><span class=si>\(</span><span class=n>name</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>greet</span><span class=p>(</span><span class=s>&#34;Qiushi&#34;</span><span class=p>)</span>
+
+<span class=kd>func</span> <span class=nf>greetTwo</span><span class=p>(</span><span class=kc>_</span> <span class=n>name1</span><span class=p>:</span> <span class=nb>String</span><span class=p>,</span> <span class=kc>_</span> <span class=n>name2</span><span class=p>:</span> <span class=nb>String</span> <span class=p>=</span> <span class=s>&#34;John Doe&#34;</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello </span><span class=si>\(</span><span class=n>name1</span><span class=si>)</span><span class=s> and </span><span class=si>\(</span><span class=n>name2</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>greetTwo</span><span class=p>(</span><span class=s>&#34;Qiushi&#34;</span><span class=p>,</span> <span class=s>&#34;Peco&#34;</span><span class=p>)</span>
+<span class=n>greetTwo</span><span class=p>(</span><span class=s>&#34;Qiushi&#34;</span><span class=p>)</span>
+</code></pre></div><h4 id=variadic-funcitons>variadic funcitons</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>squareMany</span><span class=p>(</span><span class=n>numbers</span><span class=p>:</span> <span class=nb>Int</span><span class=p>...)</span> <span class=p>{</span>
+    <span class=k>for</span> <span class=n>number</span> <span class=k>in</span> <span class=n>numbers</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>number</span><span class=si>)</span><span class=s> squared is </span><span class=si>\(</span><span class=n>number</span> <span class=o>*</span> <span class=n>number</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=n>squareMany</span><span class=p>(</span><span class=n>numbers</span><span class=p>:</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>)</span>
+</code></pre></div><p>可変長の引数を受けとる．</p><h3 id=throwing-functions>throwing functions</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>enum</span> <span class=nc>PasswordError</span><span class=p>:</span> <span class=n>Error</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=n>obvious</span>
+<span class=p>}</span>
+<span class=kd>func</span> <span class=nf>checkPassword</span><span class=p>(</span><span class=kc>_</span> <span class=n>password</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=kr>throws</span> <span class=p>-&gt;</span> <span class=nb>Bool</span> <span class=p>{</span>
+    <span class=k>if</span> <span class=n>password</span> <span class=o>!=</span> <span class=s>&#34;password&#34;</span> <span class=p>{</span>
+        <span class=k>throw</span> <span class=n>PasswordError</span><span class=p>.</span><span class=n>obvious</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=kc>true</span>
+<span class=p>}</span>
+</code></pre></div><p>Errorを継承？するエラーenumを定義する必要あり．</p><p>エラーをthrowしうるfuncはthrowsで示す必要がある．</p><h4 id=running-throwing-functions---do-try-catch>running throwing functions -> do, try, catch</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=k>do</span> <span class=p>{</span>
+    <span class=k>try</span> <span class=n>checkPassword</span><span class=p>(</span><span class=s>&#34;wrong pass&#34;</span><span class=p>)</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Correct password!&#34;</span><span class=p>)</span>
+<span class=p>}</span> <span class=k>catch</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Wrong password!&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><p>エラーを返しうる処理をfuncにしなければならないのかな．</p><h3 id=inout-parameters>inout parameters</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>doubleInPlace</span><span class=p>(</span><span class=n>number</span><span class=p>:</span> <span class=kr>inout</span> <span class=nb>Int</span><span class=p>)</span> <span class=p>{</span>
+    <span class=n>number</span> <span class=o>*=</span> <span class=mi>2</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nv>myNum</span> <span class=p>=</span> <span class=mi>10</span>
+<span class=n>doubleInPlace</span><span class=p>(</span><span class=n>number</span><span class=p>:</span> <span class=p>&amp;</span><span class=n>myNum</span><span class=p>)</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>myNum</span><span class=p>)</span>
+</code></pre></div><p>C++での参照渡しに似ている．</p><h2 id=day6>Day6</h2><h3 id=closures>closures</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>drivin</span> <span class=p>=</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;I&#39;m driving&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>drivin</span><span class=p>()</span>
+</code></pre></div><h4 id=closure-with-parameters>closure with parameters</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>drivin2</span> <span class=p>=</span> <span class=p>{</span> <span class=p>(</span><span class=n>place</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=k>in</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;I&#39;m driving to </span><span class=si>\(</span><span class=n>place</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>drivin2</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>)</span>
+</code></pre></div><p>closureは呼ぶときlabelをつけない（つけられない）．</p><h4 id=closure-return-values>closure return values</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>drivin3</span> <span class=p>=</span> <span class=p>{</span> <span class=p>(</span><span class=n>place</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>String</span> <span class=k>in</span>
+    <span class=k>return</span> <span class=s>&#34;I&#39;m driving to </span><span class=si>\(</span><span class=n>place</span><span class=si>)</span><span class=s> in my car&#34;</span>
+<span class=p>}</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>drivin3</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>))</span>
+</code></pre></div><h3 id=closure-as-parameters>closure as parameters</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>travel</span><span class=p>(</span><span class=n>by</span> <span class=n>means</span><span class=p>:</span> <span class=p>()-&gt;</span><span class=nb>Void</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;I&#39;m traveling&#34;</span><span class=p>,</span> <span class=n>terminator</span><span class=p>:</span> <span class=s>&#34; &#34;</span><span class=p>)</span>
+    <span class=n>means</span><span class=p>()</span>
+<span class=p>}</span>
+<span class=n>travel</span><span class=p>(</span><span class=n>by</span><span class=p>:</span> <span class=p>{</span><span class=bp>print</span><span class=p>(</span><span class=s>&#34;driving in my car&#34;</span><span class=p>)})</span>
+</code></pre></div><h4 id=trailing-closure-syntax>trailing closure syntax</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=n>travel</span><span class=p>()</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;flying on the plane&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>travel</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;with my bike&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><p>最後の引数がclosureの場合，このように省略して呼べる．</p><h2 id=day7>Day7</h2><h3 id=parameter-closure-that-takes-parameter>parameter closure that takes parameter</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>travel2</span><span class=p>(</span><span class=n>by</span> <span class=n>means</span><span class=p>:</span> <span class=p>(</span><span class=nb>String</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>Void</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;I&#39;m traveling&#34;</span><span class=p>,</span> <span class=n>terminator</span><span class=p>:</span> <span class=s>&#34; &#34;</span><span class=p>)</span>
+    <span class=n>means</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>travel2</span> <span class=p>{</span> <span class=p>(</span><span class=n>place</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=k>in</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;to </span><span class=si>\(</span><span class=n>place</span><span class=si>)</span><span class=s> in my car&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>travel3</span><span class=p>(</span><span class=n>action</span><span class=p>:</span> <span class=p>(</span><span class=nb>String</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;I&#39;m traveling&#34;</span><span class=p>,</span> <span class=n>terminator</span><span class=p>:</span> <span class=s>&#34; &#34;</span><span class=p>)</span>
+    <span class=bp>print</span><span class=p>(</span><span class=n>action</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>))</span>
+<span class=p>}</span>
+<span class=n>travel3</span> <span class=p>{</span> <span class=p>(</span><span class=n>place</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>String</span> <span class=k>in</span>
+    <span class=k>return</span> <span class=s>&#34;to </span><span class=si>\(</span><span class=n>place</span><span class=si>)</span><span class=s> in my car.&#34;</span>
+<span class=p>}</span>
+</code></pre></div><h4 id=shorthand-parameter-names>shorthand parameter names</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=n>travel3</span> <span class=p>{</span> <span class=n>place</span> <span class=k>in</span> <span class=k>return</span> <span class=s>&#34;to </span><span class=si>\(</span><span class=n>place</span><span class=si>)</span><span class=s> in my car&#34;</span><span class=p>}</span>
+<span class=n>travel3</span> <span class=p>{</span> <span class=k>return</span> <span class=s>&#34;to </span><span class=si>\(</span><span class=nv>$0</span><span class=si>)</span><span class=s> in my car&#34;</span> <span class=p>}</span>
+</code></pre></div><p>closureの引数が自明なら省略できる．<code>$0</code>によってポジション番号で呼ぶこともできる．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>travel4</span> <span class=p>(</span><span class=n>action</span><span class=p>:</span> <span class=p>(</span><span class=nb>String</span><span class=p>,</span> <span class=nb>Int</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;I&#39;m traveling&#34;</span><span class=p>,</span> <span class=n>terminator</span><span class=p>:</span> <span class=s>&#34; &#34;</span><span class=p>)</span>
+    <span class=bp>print</span><span class=p>(</span><span class=n>action</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>,</span> <span class=mi>50</span><span class=p>))</span>
+<span class=p>}</span>
+<span class=n>travel4</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=s>&#34;to </span><span class=si>\(</span><span class=nv>$0</span><span class=si>)</span><span class=s> at </span><span class=si>\(</span><span class=nv>$1</span><span class=si>)</span><span class=s> kilo meters per hour&#34;</span>
+<span class=p>}</span>
+
+<span class=kd>func</span> <span class=nf>travel5</span> <span class=p>()</span> <span class=p>-&gt;</span> <span class=p>(</span><span class=nb>String</span><span class=p>)-&gt;</span><span class=nb>Void</span> <span class=p>{</span>
+    <span class=k>return</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Traveling to </span><span class=si>\(</span><span class=nv>$0</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>travelClosure</span> <span class=p>=</span> <span class=n>travel5</span><span class=p>()</span>
+<span class=n>travelClosure</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>)</span>
+<span class=c1>// travel5()(&#34;London&#34;) ;works but is not recommended.</span>
+</code></pre></div><h3 id=capturing-values>capturing values</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>travel6</span><span class=p>()</span> <span class=p>-&gt;</span> <span class=p>(</span><span class=nb>String</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>Void</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>counter</span> <span class=p>=</span> <span class=mi>1</span>
+    <span class=k>return</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>counter</span><span class=si>)</span><span class=s>. I&#39;m going to </span><span class=si>\(</span><span class=nv>$0</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+        <span class=n>counter</span> <span class=o>+=</span> <span class=mi>1</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>travelClosure2</span> <span class=p>=</span> <span class=n>travel6</span><span class=p>()</span>
+<span class=n>travelClosure2</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>)</span>
+<span class=n>travelClosure2</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>)</span>
+<span class=n>travelClosure2</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>)</span>
+<span class=n>travelClosure2</span><span class=p>(</span><span class=s>&#34;London&#34;</span><span class=p>)</span>
+</code></pre></div><p>この例ではcounterがcaptureされて，functionが呼ばれ終わった後も参照されている．ややこしい．</p><h2 id=day8>Day8</h2><h3 id=creating-your-own-structs>creating your own structs</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>Sport</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span>
+<span class=p>}</span>
+
+<span class=kd>var</span> <span class=nv>tennis</span> <span class=p>=</span> <span class=n>Sport</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Tennis&#34;</span><span class=p>)</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>tennis</span><span class=p>.</span><span class=n>name</span><span class=p>)</span>
+</code></pre></div><h4 id=computed-properties>computed properties</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>Sport2</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span> <span class=c1>// stored property</span>
+    <span class=kd>var</span> <span class=nv>isOlympicSport</span><span class=p>:</span> <span class=nb>Bool</span> <span class=c1>// stored property</span>
+    
+    <span class=kd>var</span> <span class=nv>olympicStatus</span><span class=p>:</span> <span class=nb>String</span> <span class=p>{</span>  <span class=c1>// computed property</span>
+        <span class=k>if</span> <span class=n>isOlympicSport</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=s>&#34;</span><span class=si>\(</span><span class=n>name</span><span class=si>)</span><span class=s> is an Olympic sport&#34;</span>
+        <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=s>&#34;</span><span class=si>\(</span><span class=n>name</span><span class=si>)</span><span class=s> is not an Olympic sport&#34;</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>let</span> <span class=nv>chessBoxing</span> <span class=p>=</span> <span class=n>Sport2</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Chessboxing&#34;</span><span class=p>,</span> <span class=n>isOlympicSport</span><span class=p>:</span> <span class=kc>false</span><span class=p>)</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>chessBoxing</span><span class=p>.</span><span class=n>olympicStatus</span><span class=p>)</span>
+</code></pre></div><p>closureなのか？　評価してreturnされるものを値として返すプロパティ．</p><h4 id=property-observers>property observers</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>Progress</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>task</span><span class=p>:</span> <span class=nb>String</span>
+    <span class=kd>var</span> <span class=nv>amount</span><span class=p>:</span> <span class=nb>Int</span> <span class=p>{</span>
+        <span class=kr>didSet</span> <span class=p>{</span>
+            <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>task</span><span class=si>)</span><span class=s> is now </span><span class=si>\(</span><span class=n>amount</span><span class=si>)</span><span class=s>% complete&#34;</span><span class=p>)</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nv>progress</span> <span class=p>=</span> <span class=n>Progress</span><span class=p>(</span><span class=n>task</span><span class=p>:</span> <span class=s>&#34;Loading data&#34;</span><span class=p>,</span> <span class=n>amount</span><span class=p>:</span> <span class=mi>0</span><span class=p>)</span>
+<span class=n>progress</span><span class=p>.</span><span class=n>amount</span> <span class=p>=</span> <span class=mi>20</span>
+<span class=n>progress</span><span class=p>.</span><span class=n>amount</span> <span class=p>=</span> <span class=mi>60</span>
+<span class=n>progress</span><span class=p>.</span><span class=n>amount</span> <span class=p>=</span> <span class=mi>100</span>
+</code></pre></div><ul><li>didSet; evaluated after property changes.</li><li>willSet ; rarerly used. evaluated before property changes.</li></ul><h3 id=methods>Methods</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>City</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>population</span><span class=p>:</span> <span class=nb>Int</span>
+    
+    <span class=kd>func</span> <span class=nf>collectTaxes</span><span class=p>()</span> <span class=p>-&gt;</span> <span class=nb>Int</span> <span class=p>{</span>
+        <span class=k>return</span> <span class=n>population</span> <span class=o>*</span> <span class=mi>1000</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>let</span> <span class=nv>london</span> <span class=p>=</span> <span class=n>City</span><span class=p>(</span><span class=n>population</span><span class=p>:</span> <span class=mi>9_000_000</span><span class=p>)</span>
+<span class=n>london</span><span class=p>.</span><span class=n>collectTaxes</span><span class=p>()</span>
+</code></pre></div><p>structの中のfuncはmethodと呼ばれる．</p><h4 id=mutating-methods>mutating methods</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>Person</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span>
+    
+    <span class=kr>mutating</span> <span class=kd>func</span> <span class=nf>makeAnonymous</span><span class=p>()</span> <span class=p>{</span>
+        <span class=n>name</span> <span class=p>=</span> <span class=s>&#34;Anonymous&#34;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>var</span> <span class=nv>person</span> <span class=p>=</span> <span class=n>Person</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Qiushi&#34;</span><span class=p>)</span>
+<span class=n>person</span><span class=p>.</span><span class=n>makeAnonymous</span><span class=p>()</span>
+</code></pre></div><p>structの中で変数がvarとして定義されるかletとして定義されるかにかかわらず，structがletとして定義されれば中の変数も定数になる．</p><p>structがvarとletどちらで初期化されるか分からないので，struct中の変数はデフォルトではmethodによって変更できないようになっている．</p><p>変更するには，mutatingをつける必要がある．</p><h3 id=string-is-a-struct-too>String is a struct too.</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>string</span>  <span class=p>=</span> <span class=s>&#34;Do or do not, there is no try.&#34;</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>string</span><span class=p>.</span><span class=bp>count</span><span class=p>)</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>string</span><span class=p>.</span><span class=n>hasPrefix</span><span class=p>(</span><span class=s>&#34;Do&#34;</span><span class=p>))</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>string</span><span class=p>.</span><span class=n>uppercased</span><span class=p>())</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>string</span><span class=p>.</span><span class=bp>sorted</span><span class=p>())</span>
+</code></pre></div><h3 id=array-is-a-struct-too>Array is a struct too.</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>var</span> <span class=nv>toys</span> <span class=p>=</span> <span class=p>[</span><span class=s>&#34;Woody&#34;</span><span class=p>]</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>toys</span><span class=p>.</span><span class=bp>count</span><span class=p>)</span>
+<span class=n>toys</span><span class=p>.</span><span class=n>append</span><span class=p>(</span><span class=s>&#34;Buzz&#34;</span><span class=p>)</span>
+<span class=n>toys</span><span class=p>.</span><span class=n>firstIndex</span><span class=p>(</span><span class=n>of</span><span class=p>:</span> <span class=s>&#34;Buzz&#34;</span><span class=p>)</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>toys</span><span class=p>.</span><span class=bp>sorted</span><span class=p>())</span>
+<span class=n>toys</span><span class=p>.</span><span class=n>remove</span><span class=p>(</span><span class=n>at</span><span class=p>:</span> <span class=mi>0</span><span class=p>)</span>
+</code></pre></div><h2 id=day9>Day9</h2><h3 id=initializers>initializers</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>User</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>username</span><span class=p>:</span> <span class=nb>String</span>
+    
+    <span class=kd>init</span><span class=p>()</span> <span class=p>{</span>
+        <span class=n>username</span> <span class=p>=</span> <span class=s>&#34;Anonymous&#34;</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Creating a new user!&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>var</span> <span class=nv>user</span> <span class=p>=</span> <span class=n>User</span><span class=p>()</span>
+<span class=n>user</span><span class=p>.</span><span class=n>username</span> <span class=p>=</span> <span class=s>&#34;Qiushi&#34;</span>
+</code></pre></div><p>initにはfuncをつけない．</p><p>initを定義する場合，すべてのstruct変数に値が付与される必要がある．</p><h4 id=self-refer-to-the-current-instantce>self refer to the current instantce</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>Person</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span>
+    
+    <span class=kd>init</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>name</span><span class=si>)</span><span class=s> was born!&#34;</span><span class=p>)</span>
+        <span class=kc>self</span><span class=p>.</span><span class=n>name</span> <span class=p>=</span> <span class=n>name</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>var</span> <span class=nv>person</span> <span class=p>=</span> <span class=n>Person</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Qiushi&#34;</span><span class=p>)</span>
+</code></pre></div><p>initの中でinitの引数とstructインスタンス変数名を区別するためにselfを用いる．</p><h3 id=lazy-properties>lazy properties</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>FamilyTree</span> <span class=p>{</span>
+    <span class=kd>init</span><span class=p>()</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Creating family tree!&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>struct</span> <span class=nc>Person2</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span>
+    <span class=kr>lazy</span> <span class=kd>var</span> <span class=nv>familyTree</span> <span class=p>=</span> <span class=n>FamilyTree</span><span class=p>()</span>
+    
+    <span class=kd>init</span> <span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kc>self</span><span class=p>.</span><span class=n>name</span> <span class=p>=</span> <span class=n>name</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nv>qq</span> <span class=p>=</span> <span class=n>Person2</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Qiushi&#34;</span><span class=p>)</span>
+<span class=n>qq</span><span class=p>.</span><span class=n>familyTree</span>
+</code></pre></div><p>lazyをつければ，参照されて初めて評価される．</p><h3 id=static-properties-and-methods>static properties and methods</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>Student</span> <span class=p>{</span>
+    <span class=kd>static</span> <span class=kd>var</span> <span class=nv>classSize</span> <span class=p>=</span> <span class=mi>0</span>
+    <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span>
+    
+    <span class=kd>init</span> <span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kc>self</span><span class=p>.</span><span class=n>name</span> <span class=p>=</span> <span class=n>name</span>
+        <span class=n>Student</span><span class=p>.</span><span class=n>classSize</span> <span class=o>+=</span> <span class=mi>1</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>let</span> <span class=nv>ed</span> <span class=p>=</span> <span class=n>Student</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Ed&#34;</span><span class=p>)</span>
+<span class=kd>let</span> <span class=nv>taylor</span> <span class=p>=</span> <span class=n>Student</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Taylor&#34;</span><span class=p>)</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>Student</span><span class=p>.</span><span class=n>classSize</span><span class=p>)</span>
+</code></pre></div><p>staticをつけることで，struct変数になる．参照するにはインスタンスではな<code>struct名.変数名</code>で呼ぶ．</p><h3 id=access-control>access control</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>Person3</span> <span class=p>{</span>
+    <span class=kd>private</span> <span class=kd>var</span> <span class=nv>id</span><span class=p>:</span> <span class=nb>String</span>
+    
+    <span class=kd>init</span><span class=p>(</span><span class=n>id</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kc>self</span><span class=p>.</span><span class=n>id</span> <span class=p>=</span> <span class=n>id</span>
+    <span class=p>}</span>
+    
+    <span class=kd>func</span> <span class=nf>identify</span><span class=p>()</span> <span class=p>-&gt;</span> <span class=nb>String</span> <span class=p>{</span>
+        <span class=k>return</span> <span class=s>&#34;My social security number is </span><span class=si>\(</span><span class=n>id</span><span class=si>)</span><span class=s>&#34;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><ul><li>private; 参照できる範囲をインスタンス内に制限する．</li><li>public</li></ul><h2 id=day10>Day10</h2><h3 id=class>class</h3><p>classはstructと違い，memberwise initializerがデフォルトで付いてこないため，必ずinitを定義する必要がある．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>Dog</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span>
+    <span class=kd>var</span> <span class=nv>breed</span><span class=p>:</span> <span class=nb>String</span>
+    
+    <span class=kd>init</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>,</span> <span class=n>breed</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kc>self</span><span class=p>.</span><span class=n>name</span> <span class=p>=</span> <span class=n>name</span>
+        <span class=kc>self</span><span class=p>.</span><span class=n>breed</span> <span class=p>=</span> <span class=n>breed</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>poppy</span> <span class=p>=</span> <span class=n>Dog</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Poppy&#34;</span><span class=p>,</span> <span class=n>breed</span><span class=p>:</span> <span class=s>&#34;Poodle&#34;</span><span class=p>)</span>
+</code></pre></div><h4 id=class-inheritance>class inheritance</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>Poodle</span><span class=p>:</span> <span class=n>Dog</span> <span class=p>{</span>
+    <span class=kd>init</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kc>super</span><span class=p>.</span><span class=kd>init</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=n>name</span><span class=p>,</span> <span class=n>breed</span><span class=p>:</span> <span class=s>&#34;Poodle&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><p>super.init()は必須．</p><p>引数が同じだとinitはoverrideをつける必要があるよう．</p><h4 id=override-methods>override methods</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>Dog2</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>makeNoise</span><span class=p>()</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Woof!&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>class</span> <span class=nc>Poodle2</span><span class=p>:</span> <span class=n>Dog2</span> <span class=p>{</span>
+    <span class=kr>override</span> <span class=kd>func</span> <span class=nf>makeNoise</span><span class=p>()</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Yip!&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>poppy2</span> <span class=p>=</span> <span class=n>Poodle2</span><span class=p>()</span>
+<span class=n>poppy2</span><span class=p>.</span><span class=n>makeNoise</span><span class=p>()</span>
+</code></pre></div><h4 id=final-class>final class</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kr>final</span> <span class=kd>class</span> <span class=nc>Dog3</span> <span class=p>{</span>
+<span class=p>}</span>
+<span class=c1>//class Poodle3: Dog3 {</span>
+<span class=c1>//} // fails</span>
+</code></pre></div><h4 id=copying-objects>copying objects</h4><p><code>=</code>でコピーする時，classは同じポインタとなり，structは違うポインタとなるため（？），コピー先の変更がオリジナルにclassでは反映され，structでは反映されない．（structとclassの違いその3）</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>SingerClass</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span> <span class=p>=</span> <span class=s>&#34;Taylor Swift&#34;</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nv>singer</span> <span class=p>=</span> <span class=n>SingerClass</span><span class=p>()</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>singer</span><span class=p>.</span><span class=n>name</span><span class=p>)</span>
+<span class=kd>var</span> <span class=nv>singerCopy</span> <span class=p>=</span> <span class=n>singer</span>
+<span class=n>singerCopy</span><span class=p>.</span><span class=n>name</span> <span class=p>=</span> <span class=s>&#34;Justin Bieber&#34;</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>singer</span><span class=p>.</span><span class=n>name</span><span class=p>)</span>
+
+<span class=kd>struct</span> <span class=nc>SingerStruct</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span> <span class=p>=</span> <span class=s>&#34;Taylor Swift&#34;</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nv>singer2</span> <span class=p>=</span> <span class=n>SingerStruct</span><span class=p>()</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>singer2</span><span class=p>.</span><span class=n>name</span><span class=p>)</span>
+<span class=kd>var</span> <span class=nv>singerCopy2</span> <span class=p>=</span> <span class=n>singer2</span>
+<span class=n>singerCopy2</span><span class=p>.</span><span class=n>name</span> <span class=p>=</span> <span class=s>&#34;Justin Bieber&#34;</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>singer2</span><span class=p>.</span><span class=n>name</span><span class=p>)</span>
+</code></pre></div><h4 id=deinitializers>deinitializers</h4><p>classにはdeinitializerがある．（structとclassの違いその4）</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>PersonBorn</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span> <span class=p>=</span> <span class=s>&#34;John Doe&#34;</span>
+    <span class=kd>init</span> <span class=p>()</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>name</span><span class=si>)</span><span class=s> is born!&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+    <span class=kd>deinit</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>name</span><span class=si>)</span><span class=s> is no more!&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=k>for</span> <span class=kc>_</span> <span class=k>in</span> <span class=mf>1.</span><span class=p>..</span><span class=mi>3</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>person</span> <span class=p>=</span> <span class=n>PersonBorn</span><span class=p>()</span>
+<span class=p>}</span>
+</code></pre></div><h4 id=mutability>mutability</h4><p>constantのclass instanceでも変数がvariableなら変更可能．（structとclassの違いその5）</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>Singer4</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>firstName</span> <span class=p>=</span> <span class=s>&#34;Taylor&#34;</span>
+    <span class=kd>let</span> <span class=nv>lastName</span> <span class=p>=</span> <span class=s>&#34;Swift&#34;</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>taylor</span> <span class=p>=</span> <span class=n>Singer4</span><span class=p>()</span>
+<span class=n>taylor</span><span class=p>.</span><span class=n>firstName</span> <span class=p>=</span> <span class=s>&#34;John&#34;</span>
+<span class=c1>//taylor.lastName = &#34;Doe&#34; // fails</span>
+<span class=bp>print</span><span class=p>(</span><span class=n>taylor</span><span class=p>.</span><span class=n>name</span><span class=p>)</span>
+</code></pre></div><h2 id=day11>Day11</h2><h3 id=protocol>protocol</h3><p>protocolは変数やメソッドの概要を定義するもので，structがどんなprotocolかを指定して定義するのに使う．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>protocol</span> <span class=nc>Identifiable</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>id</span><span class=p>:</span> <span class=nb>String</span> <span class=p>{</span> <span class=kr>get</span> <span class=kr>set</span> <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>struct</span> <span class=nc>User</span><span class=p>:</span> <span class=n>Identifiable</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>id</span><span class=p>:</span> <span class=nb>String</span>
+<span class=p>}</span>
+<span class=kd>func</span> <span class=nf>displayID</span><span class=p>(</span><span class=n>thing</span><span class=p>:</span> <span class=n>Identifiable</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;My ID is </span><span class=si>\(</span><span class=n>thing</span><span class=p>.</span><span class=n>id</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nv>user</span> <span class=p>=</span> <span class=n>User</span><span class=p>(</span><span class=n>id</span><span class=p>:</span> <span class=s>&#34;abc&#34;</span><span class=p>)</span>
+<span class=n>displayID</span><span class=p>(</span><span class=n>thing</span><span class=p>:</span> <span class=n>user</span><span class=p>)</span>
+</code></pre></div><h4 id=protocol-inheritance>protocol inheritance</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>protocol</span> <span class=nc>Payable</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>calculateWages</span><span class=p>()</span> <span class=p>-&gt;</span> <span class=nb>Int</span>
+<span class=p>}</span>
+<span class=kd>protocol</span> <span class=nc>NeedsTraining</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>study</span><span class=p>()</span>
+<span class=p>}</span>
+<span class=kd>protocol</span> <span class=nc>HasVacation</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>takeVacation</span><span class=p>(</span><span class=n>days</span><span class=p>:</span> <span class=nb>Int</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=kd>protocol</span> <span class=nc>Employee</span><span class=p>:</span> <span class=n>Payable</span><span class=p>,</span> <span class=n>NeedsTraining</span><span class=p>,</span> <span class=n>HasVacation</span> <span class=p>{}</span>
+</code></pre></div><h3 id=extensions>extensions</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>extension</span> <span class=nc>Int</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>squared</span><span class=p>()</span> <span class=p>-&gt;</span> <span class=nb>Int</span> <span class=p>{</span>
+        <span class=k>return</span> <span class=kc>self</span> <span class=o>*</span> <span class=kc>self</span>
+    <span class=p>}</span>
+    <span class=kd>var</span> <span class=nv>isEven</span><span class=p>:</span> <span class=nb>Bool</span> <span class=p>{</span>
+        <span class=k>return</span> <span class=kc>self</span> <span class=o>%</span> <span class=mi>2</span> <span class=p>==</span> <span class=mi>0</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>number</span> <span class=p>=</span> <span class=mi>8</span>
+<span class=n>number</span><span class=p>.</span><span class=n>squared</span><span class=p>()</span>
+<span class=n>number</span><span class=p>.</span><span class=n>isEven</span>
+</code></pre></div><p>既存のtypeにmethodを追加できる．</p><p>stored propertyを追加することはできないが，computed propertyはできる．</p><h3 id=protocol-extensions>protocol extensions</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>pythons</span> <span class=p>=</span> <span class=p>[</span><span class=s>&#34;Eric&#34;</span><span class=p>,</span> <span class=s>&#34;Graham&#34;</span><span class=p>,</span> <span class=s>&#34;John&#34;</span><span class=p>,</span> <span class=s>&#34;Michael&#34;</span><span class=p>,</span> <span class=s>&#34;Terry&#34;</span><span class=p>,</span> <span class=s>&#34;Terry&#34;</span><span class=p>]</span>
+<span class=kd>let</span> <span class=nv>beatles</span> <span class=p>=</span> <span class=n>Set</span><span class=p>([</span><span class=s>&#34;John&#34;</span><span class=p>,</span> <span class=s>&#34;Paul&#34;</span><span class=p>,</span> <span class=s>&#34;George&#34;</span><span class=p>,</span> <span class=s>&#34;Ringo&#34;</span><span class=p>])</span>
+
+<span class=kd>extension</span> <span class=nc>Collection</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>summarize</span><span class=p>()</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;There are </span><span class=si>\(</span><span class=bp>count</span><span class=si>)</span><span class=s> of us:&#34;</span><span class=p>)</span>
+        <span class=k>for</span> <span class=n>name</span> <span class=k>in</span> <span class=kc>self</span> <span class=p>{</span>
+            <span class=bp>print</span><span class=p>(</span><span class=n>name</span><span class=p>)</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=n>pythons</span><span class=p>.</span><span class=n>summarize</span><span class=p>()</span>
+<span class=n>beatles</span><span class=p>.</span><span class=n>summarize</span><span class=p>(</span>
+</code></pre></div><p>protocolのextensionを作ることで，それを継承する型で追加機能が使えるようになる．</p><p>（protocolは機能の中身までは定義しないのに，変な感覚だ．）</p><h3 id=protocol-oriented-programming>protocol-oriented programming</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>protocol</span> <span class=nc>Identifiable</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>id</span><span class=p>:</span> <span class=nb>String</span> <span class=p>{</span><span class=kr>set</span> <span class=kr>get</span><span class=p>}</span>
+    <span class=kd>func</span> <span class=nf>identify</span> <span class=p>()</span>
+<span class=p>}</span>
+
+<span class=kd>extension</span> <span class=nc>Identifiable</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>identify</span><span class=p>()</span> <span class=p>-&gt;</span> <span class=nb>Void</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;My ID is </span><span class=si>\(</span><span class=n>id</span><span class=si>)</span><span class=s>.&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=kd>struct</span> <span class=nc>User</span> <span class=p>:</span> <span class=n>Identifiable</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>id</span><span class=p>:</span> <span class=nb>String</span>
+<span class=p>}</span>
+
+<span class=kd>let</span> <span class=nv>twostraws</span> <span class=p>=</span> <span class=n>User</span><span class=p>(</span><span class=n>id</span><span class=p>:</span> <span class=s>&#34;twostraws&#34;</span><span class=p>)</span>
+<span class=n>twostraws</span><span class=p>.</span><span class=n>identify</span><span class=p>()</span>
+</code></pre></div><p>protocolのメソッドに対して継承するstructで一つ一つ内容を定義することもできるが，protocol-oriented programmingではデフォルトをextensionで定義することを推奨（？）している．</p><h2 id=day12>Day12</h2><h3 id=optionals>optionals</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>var</span> <span class=nv>age</span> <span class=p>:</span> <span class=nb>Int</span><span class=p>?</span> <span class=p>=</span> <span class=kc>nil</span>
+<span class=n>age</span> <span class=p>=</span> <span class=mi>12</span>
+</code></pre></div><h4 id=unwrapping-optionals>unwrapping optionals</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>?</span> <span class=p>=</span> <span class=kc>nil</span>
+<span class=k>if</span> <span class=kd>let</span> <span class=nv>unwrapped</span> <span class=p>=</span> <span class=n>name</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;</span><span class=si>\(</span><span class=n>unwrapped</span><span class=p>.</span><span class=bp>count</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Missing name.&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><h4 id=unwrapping-with-guard>unwrapping with guard</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>greet</span><span class=p>(</span><span class=kc>_</span> <span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>?)</span> <span class=p>{</span>
+    <span class=k>guard</span> <span class=kd>let</span> <span class=nv>unwrapped</span> <span class=p>=</span> <span class=n>name</span> <span class=k>else</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;You didn&#39;t provide a name!&#34;</span><span class=p>)</span>
+        <span class=k>return</span>
+    <span class=p>}</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Hello, </span><span class=si>\(</span><span class=n>unwrapped</span><span class=si>)</span><span class=s>!&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+<span class=n>greet</span><span class=p>(</span><span class=kc>nil</span><span class=p>)</span>
+<span class=n>greet</span><span class=p>(</span><span class=s>&#34;Qiushi&#34;</span><span class=p>)</span>
+</code></pre></div><h4 id=force-unwrapping>force unwrapping</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>str</span> <span class=p>=</span> <span class=s>&#34;5&#34;</span>
+<span class=kd>let</span> <span class=nv>num</span> <span class=p>=</span> <span class=nb>Int</span><span class=p>(</span><span class=n>str</span><span class=p>)</span>
+<span class=kd>let</span> <span class=nv>num2</span> <span class=p>=</span> <span class=nb>Int</span><span class=p>(</span><span class=n>str</span><span class=p>)</span><span class=o>!</span>
+</code></pre></div><p>StringをInt()で整数型に変換する時，Int?型になる．必ず整数だと分かっている場合，Int()!とすることで強制的にInt型に変換できる．</p><h4 id=implicitly-unwrapped-options>implicitly unwrapped options</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>var</span> <span class=nv>num3</span><span class=p>:</span> <span class=nb>Int</span><span class=p>!</span> <span class=p>=</span> <span class=kc>nil</span>
+<span class=n>num3</span> <span class=p>=</span> <span class=mi>1</span>
+</code></pre></div><p>最初にnilをとるが必ず値が割り振られると分かっている時，implicitly unwrapped optionsを用いることでif letやguard letを書かずに済む．</p><p>だが，標準的なoptionalsを使う方が安全だろう．</p><h3 id=nil-coalescing>nil coalescing</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>func</span> <span class=nf>username</span><span class=p>(</span><span class=k>for</span> <span class=n>id</span><span class=p>:</span> <span class=nb>Int</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>String</span><span class=p>?</span> <span class=p>{</span>
+    <span class=k>if</span> <span class=n>id</span> <span class=p>==</span> <span class=mi>1</span> <span class=p>{</span>
+        <span class=k>return</span> <span class=s>&#34;Taylor&#34;</span>
+    <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+        <span class=k>return</span> <span class=kc>nil</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>user</span> <span class=p>=</span> <span class=n>username</span><span class=p>(</span><span class=k>for</span><span class=p>:</span> <span class=mi>2</span><span class=p>)</span> <span class=p>??</span> <span class=s>&#34;Anonymous&#34;</span>
+</code></pre></div><h3 id=optional-chaining->optional chaining ??????</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>names</span> <span class=p>=</span> <span class=p>[</span><span class=s>&#34;John&#34;</span><span class=p>,</span> <span class=s>&#34;Paul&#34;</span><span class=p>,</span> <span class=s>&#34;George&#34;</span><span class=p>,</span> <span class=s>&#34;Ringo&#34;</span><span class=p>]</span>
+<span class=kd>let</span> <span class=nv>beatle</span> <span class=p>=</span> <span class=n>names</span><span class=p>.</span><span class=bp>first</span><span class=p>?.</span><span class=n>uppercased</span><span class=p>()</span>
+<span class=kd>let</span> <span class=nv>nilArray</span> <span class=p>=</span> <span class=nb>Array</span><span class=p>&lt;</span><span class=nb>String</span><span class=p>&gt;()</span>
+<span class=n>nilArray</span><span class=p>.</span><span class=bp>first</span>
+<span class=kd>let</span> <span class=nv>nobody</span> <span class=p>=</span> <span class=n>nilArray</span><span class=p>.</span><span class=bp>first</span><span class=p>?.</span><span class=n>uppercased</span><span class=p>()</span>
+<span class=kd>let</span> <span class=nv>nilTooArr</span><span class=p>:</span> <span class=p>[</span><span class=nb>String</span><span class=p>?]</span> <span class=p>=</span> <span class=p>[</span><span class=s>&#34;A&#34;</span><span class=p>,</span> <span class=kc>nil</span><span class=p>]</span>
+<span class=n>nilTooArr</span><span class=p>.</span><span class=bp>first</span>
+<span class=n>nilTooArr</span><span class=p>.</span><span class=bp>last</span>
+<span class=n>nilTooArr</span><span class=p>.</span><span class=bp>last</span><span class=p>??.</span><span class=n>uppercased</span><span class=p>()</span>
+<span class=c1>// ????</span>
+</code></pre></div><h4 id=optional-try>optional try</h4><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>enum</span> <span class=nc>PasswordError</span><span class=p>:</span> <span class=n>Error</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=n>obvious</span>
+<span class=p>}</span>
+<span class=kd>func</span> <span class=nf>checkPass</span> <span class=p>(</span><span class=kc>_</span> <span class=n>password</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=kr>throws</span> <span class=p>-&gt;</span> <span class=nb>Bool</span> <span class=p>{</span>
+    <span class=k>if</span> <span class=n>password</span> <span class=p>==</span> <span class=s>&#34;password&#34;</span> <span class=p>{</span>
+        <span class=k>throw</span> <span class=n>PasswordError</span><span class=p>.</span><span class=n>obvious</span>
+    <span class=p>}</span>
+    <span class=k>return</span> <span class=kc>true</span>
+<span class=p>}</span>
+
+<span class=k>if</span> <span class=kd>let</span> <span class=nv>result</span> <span class=p>=</span> <span class=k>try</span><span class=p>?</span> <span class=n>checkPass</span><span class=p>(</span><span class=s>&#34;password&#34;</span><span class=p>)</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Result is </span><span class=si>\(</span><span class=n>result</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;D&#39;oh.&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=k>try</span><span class=p>!</span> <span class=n>checkPass</span><span class=p>(</span><span class=s>&#34;Sekrit&#34;</span><span class=p>)</span>
+<span class=bp>print</span><span class=p>(</span><span class=s>&#34;OK&#34;</span><span class=p>)</span>
+</code></pre></div><h3 id=failable-initializers>failable initializers</h3><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>string</span> <span class=p>=</span> <span class=s>&#34;8&#34;</span>
+<span class=kd>let</span> <span class=nv>number</span> <span class=p>=</span> <span class=nb>Int</span><span class=p>(</span><span class=n>string</span><span class=p>)</span>  <span class=c1>// failable initializer</span>
+
+<span class=kd>struct</span> <span class=nc>User</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span>
+    
+    <span class=kd>init</span><span class=p>?</span> <span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=k>if</span> <span class=n>name</span><span class=p>.</span><span class=bp>count</span> <span class=o>&gt;</span> <span class=mi>3</span> <span class=p>{</span>
+            <span class=kc>self</span><span class=p>.</span><span class=n>name</span> <span class=p>=</span> <span class=n>name</span>
+        <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+            <span class=k>return</span> <span class=kc>nil</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>userA</span> <span class=p>=</span> <span class=n>User</span><span class=p>(</span><span class=n>name</span><span class=p>:</span> <span class=s>&#34;Qi&#34;</span><span class=p>)</span>
+</code></pre></div><h4 id=typecasting>typecasting</h4><p><code>as?</code>を用いたif let構文により，もしそのクラスであればそのまま代入され，そうでなければnilとなりifに通らない．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>Animal</span> <span class=p>{}</span>
+<span class=kd>class</span> <span class=nc>Fish</span><span class=p>:</span> <span class=n>Animal</span> <span class=p>{}</span>
+<span class=kd>class</span> <span class=nc>Dog</span><span class=p>:</span> <span class=n>Animal</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>makeNoise</span><span class=p>()</span> <span class=p>{</span>
+        <span class=bp>print</span><span class=p>(</span><span class=s>&#34;Woof&#34;</span><span class=p>)</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>let</span> <span class=nv>pets</span> <span class=p>=</span> <span class=p>[</span><span class=n>Fish</span><span class=p>(),</span> <span class=n>Dog</span><span class=p>(),</span> <span class=n>Fish</span><span class=p>(),</span> <span class=n>Dog</span><span class=p>()]</span>
+<span class=k>for</span> <span class=n>pet</span> <span class=k>in</span> <span class=n>pets</span> <span class=p>{</span>
+    <span class=k>if</span> <span class=kd>let</span> <span class=nv>dog</span> <span class=p>=</span> <span class=n>pet</span> <span class=k>as</span><span class=p>?</span> <span class=n>Dog</span> <span class=p>{</span>
+        <span class=n>dog</span><span class=p>.</span><span class=n>makeNoise</span><span class=p>()</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><h2 id=day13-15>Day13-15</h2><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>let</span> <span class=nv>tuple</span> <span class=p>=</span> <span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>)</span>
+<span class=n>type</span><span class=p>(</span><span class=n>of</span><span class=p>:</span> <span class=n>tuple</span><span class=p>)</span>  <span class=c1>// -&gt; (Int, Int).Type</span>
+</code></pre></div><p>tupleは型ではない．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kc>nil</span> <span class=p>??</span> <span class=mi>1</span>  <span class=c1>// -&gt; 1</span>
+</code></pre></div><p><code>??</code>はnilのデフォルトのために使うという認識で良さそう．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>var</span> <span class=nv>str</span> <span class=p>:</span> <span class=nb>String</span><span class=p>?</span> <span class=p>=</span> <span class=s>&#34;abc&#34;</span>
+<span class=n>type</span><span class=p>(</span><span class=n>of</span><span class=p>:</span> <span class=n>str</span><span class=p>)</span>  <span class=c1>// -&gt; Optional&lt;String&gt;.Type</span>
+
+<span class=k>if</span> <span class=kd>let</span> <span class=nv>string</span> <span class=p>=</span> <span class=n>str</span> <span class=p>{</span>
+    <span class=n>type</span><span class=p>(</span><span class=n>of</span><span class=p>:</span> <span class=n>string</span><span class=p>)</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;str is </span><span class=si>\(</span><span class=n>str</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+    <span class=bp>print</span><span class=p>(</span><span class=s>&#34;string is </span><span class=si>\(</span><span class=n>string</span><span class=si>)</span><span class=s>&#34;</span><span class=p>)</span>
+<span class=p>}</span>
+
+<span class=kd>var</span> <span class=nv>nilll</span><span class=p>:</span> <span class=nb>String</span><span class=p>?</span> <span class=p>=</span> <span class=kc>nil</span>
+<span class=k>if</span> <span class=kd>let</span> <span class=nv>string</span> <span class=p>=</span> <span class=n>nilll</span> <span class=p>{</span>
+    <span class=n>type</span><span class=p>(</span><span class=n>of</span><span class=p>:</span> <span class=n>string</span><span class=p>)</span>
+<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+    <span class=c1>// stringはこの場合そもそも参照できない</span>
+    <span class=n>type</span><span class=p>(</span><span class=n>of</span><span class=p>:</span> <span class=n>nilll</span><span class=p>)</span>
+<span class=p>}</span>
+
+</code></pre></div><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>enum</span> <span class=nc>Weather</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=n>sun</span>
+    <span class=k>case</span> <span class=n>cloud</span>
+    <span class=k>case</span> <span class=n>rain</span>
+<span class=p>}</span>
+<span class=kd>func</span> <span class=nf>headache</span> <span class=p>(</span><span class=n>weather</span><span class=p>:</span> <span class=n>Weather</span><span class=p>)</span> <span class=p>-&gt;</span> <span class=nb>String</span><span class=p>?</span> <span class=p>{</span>
+    <span class=k>switch</span> <span class=n>weather</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=p>.</span><span class=n>sun</span><span class=p>:</span>
+        <span class=k>return</span> <span class=s>&#34;like&#34;</span>
+    <span class=k>case</span> <span class=p>.</span><span class=n>rain</span><span class=p>:</span>
+        <span class=k>return</span> <span class=s>&#34;hate&#34;</span>
+    <span class=k>case</span> <span class=p>.</span><span class=n>cloud</span><span class=p>:</span>
+        <span class=k>return</span> <span class=kc>nil</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><p>enumのswitch文はdefaultがなくても場合が全部列挙できていれば良い．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>C</span> <span class=p>{</span>
+    <span class=kr>@objc</span> <span class=kd>func</span> <span class=nf>blabla</span><span class=p>()</span> <span class=p>{</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=p>@</span><span class=n>objcMembers</span> <span class=kd>class</span> <span class=nc>Cs</span> <span class=p>{</span>
+    <span class=kd>func</span> <span class=nf>blabla</span><span class=p>()</span> <span class=p>{</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><p>Objective-Cのコードを動くようにするもの．既存コードを使う場合必要な場面がありそう．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>struct</span> <span class=nc>Person</span> <span class=p>{</span>
+    <span class=kd>private</span> <span class=kd>var</span> <span class=nv>age</span><span class=p>:</span> <span class=nb>Int</span>
+    <span class=n>fileprivate</span> <span class=kd>var</span> <span class=nv>name</span><span class=p>:</span> <span class=nb>String</span>
+    
+    <span class=kd>var</span> <span class=nv>ageInDogYears</span><span class=p>:</span> <span class=nb>Int</span> <span class=p>{</span>
+        <span class=kr>get</span> <span class=p>{</span>  <span class=c1>// can be abbregated.</span>
+            <span class=k>return</span> <span class=n>age</span> <span class=o>*</span> <span class=mi>7</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>struct</span> <span class=nc>User</span> <span class=p>{</span>
+    <span class=kd>let</span> <span class=nv>person</span><span class=p>:</span> <span class=n>Person</span>
+    <span class=kd>var</span> <span class=nv>username</span><span class=p>:</span> <span class=nb>String</span> <span class=p>{</span>
+        <span class=k>return</span> <span class=n>person</span><span class=p>.</span><span class=n>name</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><p>fileprivateは同じファイルの中でprivateに利用するというもの．パッケージとして公開するばあいなどに使うか．</p><div class=highlight><pre class=chroma><code class=language-swift data-lang=swift><span class=kd>class</span> <span class=nc>Album</span> <span class=p>{</span>
+<span class=p>}</span>
+<span class=kd>class</span> <span class=nc>StudioAlbum</span><span class=p>:</span> <span class=n>Album</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>studio</span><span class=p>:</span> <span class=nb>String</span>
+    <span class=kd>init</span><span class=p>(</span><span class=n>studio</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kc>self</span><span class=p>.</span><span class=n>studio</span> <span class=p>=</span> <span class=n>studio</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>class</span> <span class=nc>LiveAlbum</span><span class=p>:</span> <span class=n>Album</span> <span class=p>{</span>
+    <span class=kd>var</span> <span class=nv>location</span><span class=p>:</span> <span class=nb>String</span>
+    <span class=kd>init</span><span class=p>(</span><span class=n>location</span><span class=p>:</span> <span class=nb>String</span><span class=p>)</span> <span class=p>{</span>
+        <span class=kc>self</span><span class=p>.</span><span class=n>location</span> <span class=p>=</span> <span class=n>location</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+<span class=kd>var</span> <span class=nv>taylorSwift</span> <span class=p>=</span> <span class=n>StudioAlbum</span><span class=p>(</span><span class=n>studio</span><span class=p>:</span> <span class=s>&#34;The Castles Studios&#34;</span><span class=p>)</span>
+<span class=kd>var</span> <span class=nv>fearless</span> <span class=p>=</span> <span class=n>StudioAlbum</span><span class=p>(</span><span class=n>studio</span><span class=p>:</span> <span class=s>&#34;Aimeeland Studio&#34;</span><span class=p>)</span>
+<span class=kd>var</span> <span class=nv>iTunesLive</span> <span class=p>=</span> <span class=n>LiveAlbum</span><span class=p>(</span><span class=n>location</span><span class=p>:</span> <span class=s>&#34;New York&#34;</span><span class=p>)</span>
+<span class=kd>var</span> <span class=nv>allAlbums</span><span class=p>:</span> <span class=p>[</span><span class=n>Album</span><span class=p>]</span> <span class=p>=</span> <span class=p>[</span><span class=n>taylorSwift</span><span class=p>,</span> <span class=n>fearless</span><span class=p>,</span> <span class=n>iTunesLive</span><span class=p>]</span>
+<span class=k>for</span> <span class=n>album</span> <span class=k>in</span> <span class=n>allAlbums</span> <span class=k>as</span><span class=p>?</span> <span class=p>[</span><span class=n>LiveAlbum</span><span class=p>]</span> <span class=p>??</span> <span class=p>[</span><span class=n>LiveAlbum</span><span class=p>]()</span> <span class=p>{</span>
+    <span class=bp>print</span><span class=p>(</span><span class=n>album</span><span class=p>.</span><span class=n>location</span><span class=p>)</span>
+<span class=p>}</span>
+</code></pre></div><p>array全体に対して<code>as?</code>を使うことができる．その場合，変換が失敗してnilになった場合にもループを走らせるために空のarrayが必要．上のコードはStudioAlbumをLiveAlbumに変換できないためnilとなり結果何もしない．</p></section><section><div id=disqus_thread></div><script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return;}
+var d=document,s=d.createElement('script');s.async=true;s.src='//'+"qqhann"+'.disqus.com/embed.js';s.setAttribute('data-timestamp',+new Date());(d.head||d.body).appendChild(s);})();</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></section></article></div><div id=side class="pr-1 bg-white"><aside class=pr-3><div id=toc class="Box Box--blue mb-3"><b>Swift Cheat sheet (1-15/100)</b><nav id=TableOfContents><ul><li><a href=#day1>Day1</a></li><li><a href=#day2>Day2</a><ul><li><a href=#collections>collections</a></li><li><a href=#enum>enum</a></li></ul></li><li><a href=#day3>Day3</a><ul><li><a href=#conditions>conditions</a></li><li><a href=#switch文>switch文</a></li></ul></li><li><a href=#day4>Day4</a><ul><li><a href=#loop>Loop</a></li></ul></li><li><a href=#day5>Day5</a><ul><li><a href=#funcitons>funcitons</a></li><li><a href=#throwing-functions>throwing functions</a></li><li><a href=#inout-parameters>inout parameters</a></li></ul></li><li><a href=#day6>Day6</a><ul><li><a href=#closures>closures</a></li><li><a href=#closure-as-parameters>closure as parameters</a></li></ul></li><li><a href=#day7>Day7</a><ul><li><a href=#parameter-closure-that-takes-parameter>parameter closure that takes parameter</a></li><li><a href=#capturing-values>capturing values</a></li></ul></li><li><a href=#day8>Day8</a><ul><li><a href=#creating-your-own-structs>creating your own structs</a></li><li><a href=#methods>Methods</a></li><li><a href=#string-is-a-struct-too>String is a struct too.</a></li><li><a href=#array-is-a-struct-too>Array is a struct too.</a></li></ul></li><li><a href=#day9>Day9</a><ul><li><a href=#initializers>initializers</a></li><li><a href=#lazy-properties>lazy properties</a></li><li><a href=#static-properties-and-methods>static properties and methods</a></li><li><a href=#access-control>access control</a></li></ul></li><li><a href=#day10>Day10</a><ul><li><a href=#class>class</a></li></ul></li><li><a href=#day11>Day11</a><ul><li><a href=#protocol>protocol</a></li><li><a href=#extensions>extensions</a></li><li><a href=#protocol-extensions>protocol extensions</a></li><li><a href=#protocol-oriented-programming>protocol-oriented programming</a></li></ul></li><li><a href=#day12>Day12</a><ul><li><a href=#optionals>optionals</a></li><li><a href=#nil-coalescing>nil coalescing</a></li><li><a href=#optional-chaining->optional chaining ??????</a></li><li><a href=#failable-initializers>failable initializers</a></li></ul></li><li><a href=#day13-15>Day13-15</a></li></ul></nav></div><div><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class=twitter-share-button data-show-count=false>Tweet</a><script async src=https://platform.twitter.com/widgets.js></script>
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&layout=button&size=small&mobile_iframe=true&width=61&height=20&appId" width=61 height=20 style=border:none;overflow:hidden scrolling=no frameborder=0 allowtransparency=true allow=encrypted-media></iframe></div></aside></div><div id=footer class="pt-2 pb-3 bg-white text-center"><span class="text-small text-gray">©Qiushi Pan 2018-2019 &#183;
+Powered by the
+<a href=https://github.com/qqhann/hugo-primer class=link-gray-dark>Hugo-Primer</a> theme for
+<a href=https://gohugo.io class=link-gray-dark>Hugo</a>.</span></div></div><script type=text/javascript src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type=text/x-mathjax-config>MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script></body></html>
