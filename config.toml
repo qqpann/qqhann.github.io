@@ -1,18 +1,18 @@
-baseURL = "https://example.com"
+baseURL = "https://qqhann.dev"
 languageCode = "ja"
-title = "Hugo-Primer Themed Template"
+title = "qqhann"
 theme = "hugo-primer"
 hasCJKLanguage = true
 summaryLength = 70
 pygmentsCodeFences = true
 pygmentsUseClasses = true
-googleAnalytics = "UA-00000000-0"
-disqusShortname=""
-copyright = "&copy; Your Name"
+googleAnalytics = "UA-87782758-5"
+disqusShortname="qqhann"
+copyright = "&copy;Qiushi Pan 2018-2019"
 
 [params]
-description = "A blog template using hugo-primer theme"
-twitter = ""
+description = "Qiushi(a.k.a. qqhann)'s web site. Find my information, my blog on technologies and personal hobbies here."
+twitter = "qqhann"
 useIcon = true
 useTwitterCard = true
 shareTo = ["Twitter", "Facebook"]
