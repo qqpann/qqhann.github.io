@@ -51,3 +51,6 @@ https://speakerdeck.com/sei88888/2021-dot-04-dot-08-qiang-hua-xue-xi-ruo-shou-fa
 大きい方の数Bで割った係数と余りと、B-Aを使うのかなというアイデアから、突き進んでいた。WAとなるテストケースがあり、原因がわからずじまい。
 
 記憶を消して解き直したい。
+
+追記：[解説動画](https://www.youtube.com/watch?v=k2fzO_U7RnA&t=500s)見ると、自分のやり方は別解に近かった（少し精神力を取り戻した）。ただ、ceiling, floorの扱いと、割った数の1000W/Bと1000W/Aの間に整数がなければいけないという視点に辿り着けなかった。
+
