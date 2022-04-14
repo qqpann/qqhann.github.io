@@ -17,7 +17,7 @@ I enjoy Anime, Manga, Movies, and Games
 
 ### Links
 
-[GitHub](https://github.com/qqhann) / [Twitter](https://twitter.com/qqhann) / [SpeakerDeck](https://speakerdeck.com/qqhann) / [Kaggle](https://www.kaggle.com/qqhann) / [AtCoder](https://atcoder.jp/users/qiu)
+[GitHub](https://github.com/qqhann) / [Twitter](https://twitter.com/qqhann) / [SpeakerDeck](https://speakerdeck.com/qqhann) / [Zenn](https://zenn.dev/qqhann) / [AtCoder](https://atcoder.jp/users/qiu)
 
 [Amazon Wish List](https://www.amazon.jp/hz/wishlist/ls/26JMWTGJ0OHM2?ref_=wl_share)
 
